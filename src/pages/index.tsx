@@ -3,6 +3,7 @@ import CDNPie from "../components/charts/cdnPie";
 import PaasPie from "../components/charts/paasPie";
 import SsgPie from "../components/charts/staticSiteGenerator";
 import PageBuildersPie from "../components/charts/pageBuilders";
+import UIFrameworks from "../components/charts/uiFrameworks";
 import { Typography } from "antd";
 const { Title } = Typography;
 const GraphsPage = () => {
@@ -19,6 +20,8 @@ const GraphsPage = () => {
       <Title style={{ color: "white" }}>Page Builders</Title>
 
       <PageBuildersPie />
+      <Title style={{ color: "white" }}>UI Frameworks</Title>
+      <UIFrameworks />
     </>
   );
 };
