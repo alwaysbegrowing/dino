@@ -12,16 +12,7 @@ const { Header, Footer, Sider, Content } = Layout;
 
 export default function CustomLayout({ children }) {
   return (
-    <Layout style={{ height: "100vh" }} className="blur">
-      <Sider trigger={null}>
-        <div
-          style={{
-            height: "32px",
-            margin: "16px",
-            background: "rgba(255, 255, 255, 0.3)",
-          }}
-        />
-      </Sider>
+    <Layout style={{ height: "100vh", width: "100vw" }}>
       <Layout>
         <Header
           style={{

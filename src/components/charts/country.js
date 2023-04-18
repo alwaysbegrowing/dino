@@ -32,7 +32,12 @@ const CountryPie = () => {
     label: {
       type: "inner",
       offset: "-30%",
-      content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
+      content: ({ percent }) => {
+        console.log(percent * 100);
+        if (percent * 100 >= 5) {
+          return `${(percent * 100).toFixed(0)}%`;
+        }
+      },
       style: {
         fontSize: 14,
         textAlign: "center",

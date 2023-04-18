@@ -1,4 +1,5 @@
 import { Row, Col, Button } from "antd";
+import Layout from "../components/format/layout";
 import CDNPie from "../components/charts/cdnPie";
 import PaasPie from "../components/charts/paasPie";
 import SsgPie from "../components/charts/staticSiteGenerator";
@@ -16,31 +17,150 @@ const { Title } = Typography;
 
 const GraphsPage = () => {
   return (
-    <>
-      <Title style={{ color: "white" }}>CDNs</Title>
-      <CDNPie />
-      <Title style={{ color: "white" }}>PAAS</Title>
+    <Layout>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title style={{ display: "flex", justifyContent: "center" }}>
+            Charts
+          </Title>
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            CDNs
+          </Title>
+          <CDNPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            PAAS
+          </Title>
 
-      <PaasPie />
-      <Title style={{ color: "white" }}>Static Site Generator</Title>
+          <PaasPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Static Site Generator
+          </Title>
 
-      <SsgPie />
-      <Title style={{ color: "white" }}>Page Builders</Title>
+          <SsgPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Page Builders
+          </Title>
 
-      <PageBuildersPie />
-      <Title style={{ color: "white" }}>UI Frameworks</Title>
-      <UIFrameworksPie />
-      <Title style={{ color: "white" }}>Web Frameworks</Title>
-      <WebFrameworksPie />
-      <Title style={{ color: "white" }}>Web Servers</Title>
-      <WebServersPie />
-      <Title style={{ color: "white" }}>Country</Title>
-      <CountryPie />
-      <Title style={{ color: "white" }}>Mobile Responsiveness</Title>
-      <ResponsivePie />
-      <Title style={{ color: "white" }}>Technology Spend</Title>
-      <TechnologySpendPie />
-    </>
+          <PageBuildersPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            UI Frameworks
+          </Title>
+          <UIFrameworksPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Web Frameworks
+          </Title>
+          <WebFrameworksPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Web Servers
+          </Title>
+          <WebServersPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Country
+          </Title>
+          <CountryPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Mobile Responsiveness
+          </Title>
+          <ResponsivePie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Technology Spend
+          </Title>
+          <TechnologySpendPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+    </Layout>
   );
 };
 
