@@ -7,6 +7,7 @@ const { Header, Footer, Content } = Layout;
 //   color: '#fff',
 //   backgroundColor: '#3ba0e9',
 // }
+  const currentYear = new Date().getFullYear();
 
 export default function CustomLayout({ children }) {
   return (
@@ -36,7 +37,7 @@ export default function CustomLayout({ children }) {
           textAlign: "center",
         }}
       >
-        Footer
+      Judgement DAO {currentYear}
       </Footer>
     </Layout>
   );
