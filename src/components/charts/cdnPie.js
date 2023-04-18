@@ -2,22 +2,19 @@ import { Pie } from "@ant-design/plots";
 import sites from "../../data/sites.json";
 import { useEffect, useState } from "react";
 
-// const require = createRequire(import.meta.url);
-
-// const sites = require("../../../data/sites.json");
-
 export const getCleanedData = (targetColumn, setData) => {
   const targetServiceCount = {};
   sites.forEach((obj) => {
     obj.technologies?.forEach((tech) => {
-      if (tech.categories.some((cat) => cat.slug === targetColumn)) {
-        const targetColumnName = tech.name;
-        targetServiceCount[targetColumnName] =
-          (targetServiceCount[targetColumnName] || 0) + 1;
-      }
+      tech.categories.forEach((cat) => {
+        if (cat.slug === targetColumn) {
+          const targetColumnName = tech.name;
+          targetServiceCount[targetColumnName] =
+            (targetServiceCount[targetColumnName] || 0) + 1;
+        }
+      });
     });
   });
-  console.log({ targetServiceCount });
 
   const targetServiceData = Object.keys(targetServiceCount).map(
     (targetColumnName) => {

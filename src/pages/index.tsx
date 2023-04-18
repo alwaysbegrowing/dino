@@ -8,6 +8,7 @@ import WebFrameworksPie from "../components/charts/webFrameworks";
 import WebServersPie from "../components/charts/webServers";
 import CountryPie from "../components/charts/country";
 import ResponsivePie from "../components/charts/responsive";
+import TechnologySpendPie from "../components/charts/technologySpend";
 
 import { Typography } from "antd";
 
@@ -37,6 +38,8 @@ const GraphsPage = () => {
       <CountryPie />
       <Title style={{ color: "white" }}>Mobile Responsiveness</Title>
       <ResponsivePie />
+      <Title style={{ color: "white" }}>Technology Spend</Title>
+      <TechnologySpendPie />
     </>
   );
 };

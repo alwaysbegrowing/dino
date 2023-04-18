@@ -2,17 +2,12 @@ import { Pie } from "@ant-design/plots";
 import sites from "../../data/sites.json";
 import { useEffect, useState } from "react";
 
-// const require = createRequire(import.meta.url);
-
-// const sites = require("../../../data/sites.json");
-
 const getCleanedResponsiveData = (setData) => {
   const columnCount = {};
   sites.forEach((site) => {
     const targetColumn = site.responsive;
     columnCount[targetColumn] = (columnCount[targetColumn] || 0) + 1;
   });
-  console.log({ columnCount });
 
   const responsiveData = Object.keys(columnCount).map((targetColumn) => {
     return {

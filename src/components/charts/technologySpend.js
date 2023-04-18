@@ -2,28 +2,28 @@ import { Pie } from "@ant-design/plots";
 import sites from "../../data/sites.json";
 import { useEffect, useState } from "react";
 
-const getCleanedCountryData = (setData) => {
-  const countryCount = {};
+const getCleanedTechnologySpendData = (setData) => {
+  const technologySpendCount = {};
   sites.forEach((site) => {
-    const country = site.ipCountry;
-    countryCount[country] = (countryCount[country] || 0) + 1;
+    const column = site.technologySpend;
+    technologySpendCount[column] = (technologySpendCount[column] || 0) + 1;
   });
-  const countryData = Object.keys(countryCount).map((country) => {
+  const technologySpendData = Object.keys(technologySpendCount).map((spend) => {
     return {
-      name: country,
-      value: countryCount[country],
+      name: spend,
+      value: technologySpendCount[spend],
     };
   });
-  setData(countryData);
+  setData(technologySpendData);
 };
 
-const CountryPie = () => {
+const TechnologySpendPie = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    getCleanedCountryData(setData);
+    getCleanedTechnologySpendData(setData);
   }, []);
 
-  const countryConfig = {
+  const technologySpendConfig = {
     appendPadding: 10,
     data,
     angleField: "value",
@@ -44,7 +44,7 @@ const CountryPie = () => {
       },
     ],
   };
-  return <Pie {...countryConfig} />;
+  return <Pie {...technologySpendConfig} />;
 };
 
-export default CountryPie;
+export default TechnologySpendPie;
