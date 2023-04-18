@@ -1,7 +1,5 @@
-import { ReactNode, useState } from "react";
-import { Layout, Menu } from "antd";
-import { useRouter } from "next/router";
-const { Header, Footer, Sider, Content } = Layout;
+import { Layout } from "antd";
+const { Header, Footer, Content } = Layout;
 
 // const siderStyle: React.CSSProperties = {
 //   textAlign: 'center',
@@ -12,36 +10,34 @@ const { Header, Footer, Sider, Content } = Layout;
 
 export default function CustomLayout({ children }) {
   return (
-    <Layout style={{ height: "100vh", width: "100vw" }}>
-      <Layout>
-        <Header
+    <Layout style={{ height: "100vh" }}>
+      <Header
+        style={{
+          textAlign: "right",
+          height: 48,
+          color: "#fff",
+          lineHeight: "48px",
+        }}
+      ></Header>
+      <Content style={{ padding: "24px" }}>
+        <div
           style={{
-            textAlign: "right",
-            height: 48,
-            color: "#fff",
-            lineHeight: "48px",
-          }}
-        ></Header>
-        <Content style={{ padding: "24px" }}>
-          <div
-            style={{
-              // backgroundColor: 'white',
-              padding: "24px",
-              height: "100%",
-              overflow: "auto",
-            }}
-          >
-            {children}
-          </div>
-        </Content>
-        <Footer
-          style={{
-            textAlign: "center",
+            // backgroundColor: 'white',
+            padding: "24px",
+            height: "100%",
+            overflow: "auto",
           }}
         >
-          Footer
-        </Footer>
-      </Layout>
+          {children}
+        </div>
+      </Content>
+      <Footer
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Footer
+      </Footer>
     </Layout>
   );
 }
