@@ -5,15 +5,20 @@ import { useEffect, useState } from "react";
 export const getCleanedData = (targetColumn, setData) => {
   const targetServiceCount = {};
   sites.forEach((obj) => {
+    let columnPresent = false;
     obj.technologies?.forEach((tech) => {
-      tech.categories.forEach((cat) => {
-        if (cat.slug === targetColumn) {
-          const targetColumnName = tech.name;
-          targetServiceCount[targetColumnName] =
-            (targetServiceCount[targetColumnName] || 0) + 1;
-        }
-      });
+      if (tech.categories.some((cat) => cat.slug === targetColumn)) {
+        const targetColumnName = tech.name;
+        targetServiceCount[targetColumnName] =
+          (targetServiceCount[targetColumnName] || 0) + 1;
+        columnPresent = true;
+      }
     });
+    if (columnPresent === false) {
+      const targetColumnName = "missing";
+      targetServiceCount[targetColumnName] =
+        (targetServiceCount[targetColumnName] || 0) + 1;
+    }
   });
 
   const targetServiceData = Object.keys(targetServiceCount).map(
