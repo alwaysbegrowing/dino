@@ -5,6 +5,7 @@ import SsgPie from "../components/charts/staticSiteGenerator";
 import PageBuildersPie from "../components/charts/pageBuilders";
 import UIFrameworks from "../components/charts/uiFrameworks";
 import WebFrameworks from "../components/charts/webFrameworks";
+import WebServers from "../components/charts/webServers";
 
 import { Typography } from "antd";
 
@@ -28,6 +29,8 @@ const GraphsPage = () => {
       <UIFrameworks />
       <Title style={{ color: "white" }}>Web Frameworks</Title>
       <WebFrameworks />
+      <Title style={{ color: "white" }}>Web Servers</Title>
+      <WebServers />
     </>
   );
 };
