@@ -4,8 +4,12 @@ import PaasPie from "../components/charts/paasPie";
 import SsgPie from "../components/charts/staticSiteGenerator";
 import PageBuildersPie from "../components/charts/pageBuilders";
 import UIFrameworks from "../components/charts/uiFrameworks";
+import WebFrameworks from "../components/charts/webFrameworks";
+
 import { Typography } from "antd";
+
 const { Title } = Typography;
+
 const GraphsPage = () => {
   return (
     <>
@@ -22,6 +26,8 @@ const GraphsPage = () => {
       <PageBuildersPie />
       <Title style={{ color: "white" }}>UI Frameworks</Title>
       <UIFrameworks />
+      <Title style={{ color: "white" }}>Web Frameworks</Title>
+      <WebFrameworks />
     </>
   );
 };
