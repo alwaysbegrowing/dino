@@ -2,6 +2,11 @@
   "name": "dino",
   "version": "0.1.0",
   "private": true,
+  "overrides": {
+    "@antv/g2": "4.2.8",
+    "@antv/g-base": "0.5.11",
+    "@antv/path-util": "2.0.15"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,9 +14,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/plots": "^1.2.5",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
+    "antd": "^5.4.2",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
