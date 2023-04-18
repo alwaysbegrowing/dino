@@ -1,52 +1,41 @@
-// import { createRequire } from "node:module";
 import { Pie } from "@ant-design/plots";
 import sites from "../../data/sites.json";
+import { useEffect, useState } from "react";
 
 // const require = createRequire(import.meta.url);
 
 // const sites = require("../../../data/sites.json");
 
-const getData = () => {
-  const cdnTechnologies = {};
+export const getCleanedData = (targetColumn, setData) => {
+  const targetServiceCount = {};
   sites.forEach((obj) => {
     obj.technologies?.forEach((tech) => {
-      if (tech.categories.some((cat) => cat.slug === "cdn")) {
-        const techName = tech.name;
-        if (!cdnTechnologies[techName]) {
-          cdnTechnologies[techName] = 1;
-        } else {
-          cdnTechnologies[techName]++;
-        }
+      if (tech.categories.some((cat) => cat.slug === targetColumn)) {
+        const targetColumnName = tech.name;
+        targetServiceCount[targetColumnName] =
+          (targetServiceCount[targetColumnName] || 0) + 1;
       }
     });
   });
-  console.log({ cdnTechnologies });
-  return cdnTechnologies;
+  console.log({ targetServiceCount });
+
+  const targetServiceData = Object.keys(targetServiceCount).map(
+    (targetColumnName) => {
+      return {
+        name: targetColumnName,
+        value: targetServiceCount[targetColumnName],
+      };
+    }
+  );
+  setData(targetServiceData);
 };
 
 const CDNPie = () => {
-  const data = [
-    { name: "Cloudflare", value: 1138 },
-    { name: "Amazon Cloudfront", value: 238 },
-    { name: "Amazon S3", value: 194 },
-    { name: "jsDelivr", value: 130 },
-    { name: "Cloudinary", value: 14 },
-    { name: "Google Hosted Libraries", value: 120 },
-    { name: "Akamai", value: 1 },
-    { name: "cdnjs", value: 111 },
-    { name: "Fastly", value: 64 },
-    { name: "Netlify", value: 203 },
-    { name: "Imgix", value: 5 },
-    { name: "Google Cloud CDN", value: 25 },
-    { name: "Unpkg", value: 76 },
-    { name: "jQuery CDN", value: 30 },
-    { name: "Bunny", value: 26 },
-    { name: "Uploadcare", value: 1 },
-    { name: "Alibaba Cloud CDN", value: 2 },
-    { name: "CreateJS", value: 1 },
-  ];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getCleanedData("cdn", setData);
+  }, []);
 
-  console.log({ data });
   const cdnConfig = {
     appendPadding: 10,
     data,
