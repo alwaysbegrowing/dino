@@ -2,7 +2,7 @@ import { Pie } from "@ant-design/plots";
 import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const WebServers = () => {
+const WebServersPie = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     getCleanedData("web-servers", setData);
@@ -32,4 +32,4 @@ const WebServers = () => {
   return <Pie {...webServersConfig} />;
 };
 
-export default WebServers;
+export default WebServersPie;

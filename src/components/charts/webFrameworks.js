@@ -2,7 +2,7 @@ import { Pie } from "@ant-design/plots";
 import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const WebFrameworks = () => {
+const WebFrameworksPie = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     getCleanedData("ui-frameworks", setData);
@@ -32,4 +32,4 @@ const WebFrameworks = () => {
   return <Pie {...webFrameworksConfig} />;
 };
 
-export default WebFrameworks;
+export default WebFrameworksPie;

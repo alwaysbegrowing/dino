@@ -2,7 +2,7 @@ import { Pie } from "@ant-design/plots";
 import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const UIFrameworks = () => {
+const UIFrameworksPie = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     getCleanedData("ui-frameworks", setData);
@@ -32,4 +32,4 @@ const UIFrameworks = () => {
   return <Pie {...uiFrameworksConfig} />;
 };
 
-export default UIFrameworks;
+export default UIFrameworksPie;

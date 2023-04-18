@@ -6,30 +6,30 @@ import { useEffect, useState } from "react";
 
 // const sites = require("../../../data/sites.json");
 
-const getCleanedResponsiveData = (setData) => {
-  const columnCount = {};
+const getCleanedCountryData = (setData) => {
+  const countryCount = {};
   sites.forEach((site) => {
-    const targetColumn = site.responsive;
-    columnCount[targetColumn] = (columnCount[targetColumn] || 0) + 1;
+    const country = site.ipCountry;
+    countryCount[country] = (countryCount[country] || 0) + 1;
   });
-  console.log({ columnCount });
+  console.log({ countryCount });
 
-  const responsiveData = Object.keys(columnCount).map((targetColumn) => {
+  const countryData = Object.keys(countryCount).map((country) => {
     return {
-      name: targetColumn,
-      value: columnCount[targetColumn],
+      name: country,
+      value: countryCount[country],
     };
   });
-  setData(responsiveData);
+  setData(countryData);
 };
 
-const ResponsivePie = () => {
+const CountryPie = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    getCleanedResponsiveData(setData);
+    getCleanedCountryData(setData);
   }, []);
 
-  const responsiveConfig = {
+  const countryConfig = {
     appendPadding: 10,
     data,
     angleField: "value",
@@ -50,7 +50,7 @@ const ResponsivePie = () => {
       },
     ],
   };
-  return <Pie {...responsiveConfig} />;
+  return <Pie {...countryConfig} />;
 };
 
-export default ResponsivePie;
+export default CountryPie;

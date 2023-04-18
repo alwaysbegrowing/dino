@@ -3,9 +3,11 @@ import CDNPie from "../components/charts/cdnPie";
 import PaasPie from "../components/charts/paasPie";
 import SsgPie from "../components/charts/staticSiteGenerator";
 import PageBuildersPie from "../components/charts/pageBuilders";
-import UIFrameworks from "../components/charts/uiFrameworks";
-import WebFrameworks from "../components/charts/webFrameworks";
-import WebServers from "../components/charts/webServers";
+import UIFrameworksPie from "../components/charts/uiFrameworks";
+import WebFrameworksPie from "../components/charts/webFrameworks";
+import WebServersPie from "../components/charts/webServers";
+import CountryPie from "../components/charts/country";
+import ResponsivePie from "../components/charts/responsive";
 
 import { Typography } from "antd";
 
@@ -26,11 +28,15 @@ const GraphsPage = () => {
 
       <PageBuildersPie />
       <Title style={{ color: "white" }}>UI Frameworks</Title>
-      <UIFrameworks />
+      <UIFrameworksPie />
       <Title style={{ color: "white" }}>Web Frameworks</Title>
-      <WebFrameworks />
+      <WebFrameworksPie />
       <Title style={{ color: "white" }}>Web Servers</Title>
-      <WebServers />
+      <WebServersPie />
+      <Title style={{ color: "white" }}>Country</Title>
+      <CountryPie />
+      <Title style={{ color: "white" }}>Mobile Responsiveness</Title>
+      <ResponsivePie />
     </>
   );
 };
