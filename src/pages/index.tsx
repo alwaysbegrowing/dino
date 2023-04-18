@@ -1,4 +1,4 @@
-import { Row, Col, Button, Card, Space } from "antd";
+import { Row, Col, Card, Space } from "antd";
 import Layout from "../components/format/layout";
 import CDNPie from "../components/charts/cdnPie";
 import PaasPie from "../components/charts/paasPie";
@@ -19,85 +19,84 @@ const { Title } = Typography;
 const GraphsPage = () => {
   return (
     <Layout>
-      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
+      <Space
+        direction="vertical"
+        size="middle"
+        style={{ display: "flex", width: "100%" }}
+      >
         <Row justify="center">
           <Col span={24}>
             <Title style={{ textAlign: "center" }}>Charts</Title>
           </Col>
         </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="CDNs">
+        <Row justify="center" gutter={[16, 16]}>
+          <Col>
+            <Card title="CDNs" bodyStyle={{ padding: 24, width: 425 }}>
               <CDNPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="PAAS">
+          <Col>
+            <Card title="PAAS" bodyStyle={{ padding: 24, width: 425 }}>
               <PaasPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Static Site Generator">
+          <Col>
+            <Card
+              title="Static Site Generator"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
               <SsgPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Page Builders">
+          <Col>
+            <Card title="Page Builders" bodyStyle={{ padding: 24, width: 425 }}>
               <PageBuildersPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="UI Frameworks">
+          <Col>
+            <Card title="UI Frameworks" bodyStyle={{ padding: 24, width: 425 }}>
               <UIFrameworksPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Web Frameworks">
+          <Col>
+            <Card
+              title="Web Frameworks"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
               <WebFrameworksPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Web Servers">
+          <Col>
+            <Card title="Web Servers" bodyStyle={{ padding: 24, width: 425 }}>
               <WebServersPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Javascript Frameworks">
+          <Col>
+            <Card
+              title="Javascript Frameworks"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
               <JSFrameworksPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Country">
+          <Col>
+            <Card title="Country" bodyStyle={{ padding: 24, width: 425 }}>
               <CountryPie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Mobile Responsiveness">
+          <Col>
+            <Card
+              title="Mobile Responsiveness"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
               <ResponsivePie />
             </Card>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={24}>
-            <Card title="Technology Spend">
+          <Col>
+            <Card
+              title="Technology Spend"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
               <TechnologySpendPie />
             </Card>
           </Col>
