@@ -10,6 +10,7 @@ import WebServersPie from "../components/charts/webServers";
 import CountryPie from "../components/charts/country";
 import ResponsivePie from "../components/charts/responsive";
 import TechnologySpendPie from "../components/charts/technologySpend";
+import JSFrameworksPie from "../components/charts/javascriptFrameworks";
 
 import { Typography } from "antd";
 
@@ -118,6 +119,19 @@ const GraphsPage = () => {
             Web Servers
           </Title>
           <WebServersPie />
+        </Col>
+        <Col span={4}></Col>
+      </Row>
+      <Row>
+        <Col span={4}></Col>
+        <Col span={16}>
+          <Title
+            style={{ display: "flex", justifyContent: "center" }}
+            level={3}
+          >
+            Javascript Frameworks
+          </Title>
+          <JSFrameworksPie />
         </Col>
         <Col span={4}></Col>
       </Row>
