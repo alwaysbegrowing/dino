@@ -19,7 +19,6 @@ const appInfo = [];
 
 const cleanURLs = () => {
   sites.forEach((site) => {
-    console.log(site.URL);
     if (site.status === "success") {
       const cleanDomain = getDomainFromUrl(site.URL);
       const appUrlCheck = cleanDomain.substring(0, 3);
@@ -36,8 +35,33 @@ cleanURLs();
 
 console.log({ domains });
 
-export default function handler(req, res) {
-  res.status(200).json({ name: "John Doe" });
+export default async function getSubdomains(req, res) {
+  let batchStart = 0;
+  const batchSize = 10;
+  // while (batchStart < domains.length) {
+  const batchEnd = Math.min(batchStart + batchSize, domains.length);
+  const batch = domains.slice(batchStart, batchEnd).join(",");
+  console.log({ batch });
+  // const url = new URL("https://api.wappalyzer.com/v2/subdomains/");
+  // url.searchParams.set("domains", batch);
+  const url = `https://api.wappalyzer.com/v2/subdomains/?domains=${batch}&sets=all`;
+  console.log({ url });
+  try {
+    const data = await fetch(url, {
+      method: "GET",
+      headers: {
+        "x-api-key": "pne7BK74k433aDbsVaBLV4mf71k6raKm3hj7UJ0B",
+      },
+    });
+    console.log({ data });
+    console.log("success", data.state);
+    return res.status(200).json({ data });
+  } catch (e) {
+    console.log(e);
+  }
+
+  // batchStart += batchSize;
+  // }
 }
 
 //1. IF site.status === "success" : Create function to loop through URLs and clean them (remove http, https, www, etc.)
