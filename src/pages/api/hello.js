@@ -15,12 +15,20 @@ function getDomainFromUrl(url) {
 }
 
 const domains = [];
+const appInfo = [];
 
 const cleanURLs = () => {
   sites.forEach((site) => {
     console.log(site.URL);
-    const cleanDomain = getDomainFromUrl(site.URL);
-    domains.push(cleanDomain);
+    if (site.status === "success") {
+      const cleanDomain = getDomainFromUrl(site.URL);
+      const appUrlCheck = cleanDomain.substring(0, 3);
+      if (appUrlCheck === "app") {
+        appInfo.push(site);
+      } else {
+        domains.push(cleanDomain);
+      }
+    }
   });
 };
 
