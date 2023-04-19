@@ -1,317 +1,144 @@
 [
   {
-    URL: "https://polygon.technology/",
-    status: "success",
-    technologies: [
-      {
-        name: "Node.js",
-        slug: "node-js",
-        versions: [],
-        trafficRank: 506,
-        categories: [
-          {
-            id: 27,
-            slug: "programming-languages",
-            name: "Programming languages",
-          },
-        ],
+    domain: "arbor.finance",
+    subdomains: {
+      "app.arbor.finance": { createdAt: 1669341048, updatedAt: 1680200156 },
+      "docs.arbor.finance": { createdAt: 1669396816, updatedAt: 1678397786 },
+    },
+  },
+  {
+    domain: "frax.finance",
+    subdomains: {
+      "app.frax.finance": { createdAt: 1654183468, updatedAt: 1681365260 },
+      "old.app.frax.finance": { createdAt: 1674096382, updatedAt: 1674096382 },
+      "docs.frax.finance": { createdAt: 1674629337, updatedAt: 1674629337 },
+      "facts.frax.finance": { createdAt: 1666828702, updatedAt: 1678111541 },
+    },
+  },
+  {
+    domain: "velodrome.finance",
+    subdomains: {
+      "api.velodrome.finance": { createdAt: 1669978589, updatedAt: 1677991880 },
+      "app.velodrome.finance": { createdAt: 1677873201, updatedAt: 1677873201 },
+      "docs.velodrome.finance": {
+        createdAt: 1678858234,
+        updatedAt: 1678858234,
       },
-      {
-        name: "Tailwind CSS",
-        slug: "tailwind-css",
-        versions: [],
-        trafficRank: 506,
-        categories: [{ id: 66, slug: "ui-frameworks", name: "UI frameworks" }],
+      "start.velodrome.finance": {
+        createdAt: 1676865967,
+        updatedAt: 1679546991,
       },
-      {
-        name: "Nuxt.js",
-        slug: "nuxt-js",
-        versions: [],
-        trafficRank: 506,
-        categories: [
-          {
-            id: 12,
-            slug: "javascript-frameworks",
-            name: "JavaScript frameworks",
-          },
-          { id: 18, slug: "web-frameworks", name: "Web frameworks" },
-          { id: 22, slug: "web-servers", name: "Web servers" },
-          {
-            id: 57,
-            slug: "static-site-generator",
-            name: "Static site generator",
-          },
-        ],
+    },
+  },
+  {
+    domain: "compound.finance",
+    subdomains: {
+      "api.alpha.compound.finance": {
+        createdAt: 1651975812,
+        updatedAt: 1678909534,
       },
-      {
-        name: "Google Analytics",
-        slug: "google-analytics",
-        versions: ["GA4"],
-        trafficRank: 825,
-        categories: [{ id: 10, slug: "analytics", name: "Analytics" }],
+      "app.compound.finance": { createdAt: 1677739184, updatedAt: 1677739184 },
+      "branch.compound.finance": {
+        createdAt: 1671647115,
+        updatedAt: 1679762283,
       },
-      {
-        name: "Vue.js",
-        slug: "vue-js",
-        versions: [],
-        trafficRank: 506,
-        categories: [
-          {
-            id: 12,
-            slug: "javascript-frameworks",
-            name: "JavaScript frameworks",
-          },
-        ],
+      "branch-app.compound.finance": {
+        createdAt: 1671647115,
+        updatedAt: 1680258534,
       },
-      {
-        name: "Microsoft Clarity",
-        slug: "microsoft-clarity",
-        versions: ["0.7.1", "0.7.2"],
-        trafficRank: 494,
-        categories: [{ id: 10, slug: "analytics", name: "Analytics" }],
+      "c3.compound.finance": { createdAt: 1659891948, updatedAt: 1681438033 },
+      "docs.compound.finance": { createdAt: 1669595812, updatedAt: 1678110326 },
+      "profile.compound.finance": {
+        createdAt: 1651975812,
+        updatedAt: 1679446240,
       },
-      {
-        name: "jQuery",
-        slug: "jquery",
-        versions: ["3.5.1"],
-        trafficRank: 489,
-        categories: [
-          {
-            id: 59,
-            slug: "javascript-libraries",
-            name: "JavaScript libraries",
-          },
-        ],
+      "v2-app.compound.finance": {
+        createdAt: 1668410048,
+        updatedAt: 1679216255,
       },
-      {
-        name: "jsDelivr",
-        slug: "jsdelivr",
-        versions: [],
-        trafficRank: 489,
-        categories: [{ id: 31, slug: "cdn", name: "CDN" }],
+      "v3-app.compound.finance": {
+        createdAt: 1680807691,
+        updatedAt: 1680807690,
       },
-      {
-        name: "Google Tag Manager",
-        slug: "google-tag-manager",
-        versions: [],
-        trafficRank: 462,
-        categories: [{ id: 42, slug: "tag-managers", name: "Tag managers" }],
+    },
+  },
+  {
+    domain: "chainport.io",
+    subdomains: {
+      "app.chainport.io": { createdAt: 1678128827, updatedAt: 1678128827 },
+      "docs.chainport.io": { createdAt: 1665075973, updatedAt: 1679993734 },
+    },
+  },
+  {
+    domain: "alpacafinance.org",
+    subdomains: {
+      "alpaca-app-assets.alpacafinance.org": {
+        createdAt: 1680148623,
+        updatedAt: 1680148623,
       },
-      {
-        name: "Cloudflare",
-        slug: "cloudflare",
-        versions: [],
-        trafficRank: 495,
-        categories: [{ id: 31, slug: "cdn", name: "CDN" }],
+      "alpaca-static-api.alpacafinance.org": {
+        createdAt: 1678075278,
+        updatedAt: 1678075278,
       },
-      {
-        name: "core-js",
-        slug: "core-js",
-        versions: [
-          "3.19.0",
-          "3.27.2",
-          "3.19.2",
-          "3.23.3",
-          "2.6.12",
-          "3.27.0",
-          "3.29.0",
-          "3.18.1",
-        ],
-        trafficRank: 935,
-        categories: [
-          {
-            id: 59,
-            slug: "javascript-libraries",
-            name: "JavaScript libraries",
-          },
-        ],
+      "alpies.alpacafinance.org": {
+        createdAt: 1651798459,
+        updatedAt: 1679337994,
       },
-      {
-        name: "Open Graph",
-        slug: "open-graph",
-        versions: [],
-        trafficRank: 935,
-        categories: [{ id: 19, slug: "miscellaneous", name: "Miscellaneous" }],
+      "app.alpacafinance.org": { createdAt: 1677676985, updatedAt: 1677676985 },
+      "docs.alpacafinance.org": {
+        createdAt: 1681207733,
+        updatedAt: 1681207733,
       },
-      {
-        name: "PWA",
-        slug: "pwa",
-        versions: [],
-        trafficRank: 458,
-        categories: [{ id: 19, slug: "miscellaneous", name: "Miscellaneous" }],
+      "forum.alpacafinance.org": {
+        createdAt: 1660345478,
+        updatedAt: 1679155057,
       },
-      {
-        name: "Webpack",
-        slug: "webpack",
-        versions: [],
-        trafficRank: 458,
-        categories: [{ id: 19, slug: "miscellaneous", name: "Miscellaneous" }],
+      "gov.alpacafinance.org": { createdAt: 1648939696, updatedAt: 1679718193 },
+    },
+  },
+  {
+    domain: "bancor.network",
+    subdomains: {
+      "app.bancor.network": { createdAt: 1680764676, updatedAt: 1680764676 },
+      "blog.bancor.network": { createdAt: 1677058669, updatedAt: 1677058669 },
+      "buy.bancor.network": { createdAt: 1679695692, updatedAt: 1679695692 },
+      "docs.bancor.network": { createdAt: 1652601067, updatedAt: 1679626094 },
+      "gov.bancor.network": { createdAt: 1621218509, updatedAt: 1679445934 },
+      "home.bancor.network": { createdAt: 1652296377, updatedAt: 1678342501 },
+      "support.bancor.network": {
+        createdAt: 1652601067,
+        updatedAt: 1679502575,
       },
-      {
-        name: "Vimeo",
-        slug: "vimeo",
-        versions: [],
-        trafficRank: 470,
-        categories: [{ id: 14, slug: "video-players", name: "Video players" }],
-      },
-      {
-        name: "Webflow",
-        slug: "webflow",
-        versions: [],
-        trafficRank: 470,
-        categories: [{ id: 51, slug: "page-builders", name: "Page builders" }],
-      },
-      {
-        name: "HSTS",
-        slug: "hsts",
-        versions: [],
-        trafficRank: 280,
-        categories: [{ id: 16, slug: "security", name: "Security" }],
-      },
-      {
-        name: "Linkedin Insight Tag",
-        slug: "linkedin-insight-tag",
-        versions: [],
-        trafficRank: 416,
-        categories: [{ id: 10, slug: "analytics", name: "Analytics" }],
-      },
-      {
-        name: "Cloudinary",
-        slug: "cloudinary",
-        versions: [],
-        trafficRank: 257,
-        categories: [
-          { id: 31, slug: "cdn", name: "CDN" },
-          {
-            id: 95,
-            slug: "digital-asset-management",
-            name: "Digital asset management",
-          },
-        ],
-      },
-      {
-        name: "Airtable",
-        slug: "airtable",
-        versions: [],
-        trafficRank: 228,
-        categories: [{ id: 5, slug: "widgets", name: "Widgets" }],
-      },
-      {
-        name: "Google Font API",
-        slug: "google-font-api",
-        versions: [],
-        trafficRank: 175,
-        categories: [{ id: 17, slug: "font-scripts", name: "Font scripts" }],
-      },
-      {
-        name: "Google Hosted Libraries",
-        slug: "google-hosted-libraries",
-        versions: [],
-        trafficRank: 175,
-        categories: [{ id: 31, slug: "cdn", name: "CDN" }],
-      },
-      {
-        name: "Splide",
-        slug: "splide",
-        versions: [],
-        trafficRank: 170,
-        categories: [
-          {
-            id: 59,
-            slug: "javascript-libraries",
-            name: "JavaScript libraries",
-          },
-        ],
-      },
-      {
-        name: "YouTube",
-        slug: "youtube",
-        versions: [],
-        trafficRank: 9,
-        categories: [{ id: 14, slug: "video-players", name: "Video players" }],
-      },
-      {
-        name: "Linkedin Ads",
-        slug: "linkedin-ads",
-        versions: [],
-        trafficRank: 0,
-        categories: [{ id: 36, slug: "advertising", name: "Advertising" }],
-      },
-      {
-        name: "HubSpot",
-        slug: "hubspot",
-        versions: [],
-        trafficRank: 0,
-        categories: [
-          {
-            id: 32,
-            slug: "marketing-automation",
-            name: "Marketing automation",
-          },
-        ],
-      },
-      {
-        name: "Sendinblue",
-        slug: "sendinblue",
-        versions: [],
-        trafficRank: 0,
-        categories: [
-          {
-            id: 32,
-            slug: "marketing-automation",
-            name: "Marketing automation",
-          },
-          { id: 75, slug: "email", name: "Email" },
-        ],
-      },
-      {
-        name: "DocuSign",
-        slug: "docusign",
-        versions: [],
-        trafficRank: 0,
-        categories: [{ id: 19, slug: "miscellaneous", name: "Miscellaneous" }],
-      },
-    ],
-    ipCountry: "IN",
-    language: "en",
-    twitter: ["https://www.twitter.com/0xPolygon"],
-    instagram: ["https://www.instagram.com/0xpolygon"],
-    github: ["https://www.github.com/maticnetwork"],
-    linkedin: [
-      "https://www.linkedin.com/company/0xpolygon",
-      "https://www.linkedin.com/company/polygon-protocol",
-    ],
-    title: "Bring the World to Ethereum | Polygon - Polygon",
-    description:
-      "Polygon solves common blockchain pain points, offering low gas fees and high speeds without sacrificing security. Over 6,000 dApps are already onboard.",
-    copyright: "© 2023 Polygon technology",
-    copyrightYear: 2023,
-    responsive: true,
-    schemaOrgTypes: ["Organization"],
-    "certInfo.issuer": "GTS CA 1P5",
-    "certInfo.protocol": "TLS 1.3",
-    "certInfo.validTo": 1682489325,
-    "dns.spf": false,
-    "dns.dmarc": false,
-    https: false,
-    companyName: "Polygon Technology",
-    inferredCompanyName: "POLYGON",
-    industry: "IT Services and IT Consulting",
-    companySize: "501-1,000 employees",
-    about:
-      "Polygon is the first well-structured, easy-to-use platform for Ethereum scaling and infrastructure development. Its core component is Polygon SDK, a modular, flexible framework that supports building multiple types of applications. Using Polygon, one can create Optimistic Rollup chains, ZK Rollup chains, stand alone chains or any other kind of infra required by the developer. Polygon effectively transforms Ethereum into a full-fledged multi-chain system (aka Internet of Blockchains). This multi-chain system is akin to other ones such as Polkadot, Cosmos, Avalanche etc with the advantages of Ethereum’s security, vibrant ecosystem and openness. With Polygon, new features are being built around the existing proven technology to expand the ability to cater to diverse needs from the developer ecosystem. Polygon will continue to develop the core technology so that it can scale to a larger ecosystem. The $MATIC token will continue to exist and will play an increasingly important role, securing the system and enabling governance.",
-    locations: [
-      "Bengaluru, Karnataka",
-      "#157, 2nd A Cross, Indiranagar Double Rd, Indiranagar, Bengaluru, Karnataka 560071, IN",
-    ],
-    companyType: "Privately Held",
-    companyFounded: 2017,
-    employees: [
-      "Paul O'Leary -- Blockchain Technology Executive",
-      "Paul Dowman -- Blockchain engineering leadership",
-      "Ricky Fiel -- ",
-      "Sebastian Rodriguez -- Building Self Sovereign Indentity solutions at Polygon",
-    ],
-    technologySpend: "High",
+      "vote.bancor.network": { createdAt: 1665425724, updatedAt: 1680195223 },
+    },
+  },
+  {
+    domain: "kava.io",
+    subdomains: {
+      "api.kava.io": { createdAt: 1674997717, updatedAt: 1674997717 },
+      "app.kava.io": { createdAt: 1680522539, updatedAt: 1680522539 },
+      "docs.kava.io": { createdAt: 1677695615, updatedAt: 1677695615 },
+      "es.kava.io": { createdAt: 1667421178, updatedAt: 1678228719 },
+      "explorer.kava.io": { createdAt: 1670982954, updatedAt: 1679062036 },
+      "faucet.kava.io": { createdAt: 1664864802, updatedAt: 1680183937 },
+    },
+  },
+  {
+    domain: "angle.money",
+    subdomains: {
+      "analytics.angle.money": { createdAt: 1676319923, updatedAt: 1676319923 },
+      "app.angle.money": { createdAt: 1677507874, updatedAt: 1677507874 },
+      "docs.angle.money": { createdAt: 1676483926, updatedAt: 1676483926 },
+      "gov.angle.money": { createdAt: 1636260805, updatedAt: 1680157240 },
+      "merkl.angle.money": { createdAt: 1676996643, updatedAt: 1676996643 },
+    },
+  },
+  {
+    domain: "realms.today",
+    subdomains: {
+      "api.realms.today": { createdAt: 1679854659, updatedAt: 1679854659 },
+      "app.realms.today": { createdAt: 1669637554, updatedAt: 1678182350 },
+      "docs.realms.today": { createdAt: 1680614277, updatedAt: 1680614277 },
+    },
   },
 ];
