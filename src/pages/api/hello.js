@@ -50,11 +50,13 @@ export default async function getSubdomains(req, res) {
     const data = await fetch(url, {
       method: "GET",
       headers: {
-        "x-api-key": "pne7BK74k433aDbsVaBLV4mf71k6raKm3hj7UJ0B",
+        "x-api-key": process.env.TEST_WAPP_KEY,
       },
     });
     console.log({ data });
-    console.log("success", data.state);
+    const urls = await data.json() 
+    console.log({urls})
+    console.log("success", data.status);
     return res.status(200).json({ data });
   } catch (e) {
     console.log(e);
