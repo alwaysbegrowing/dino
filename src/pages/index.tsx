@@ -42,7 +42,7 @@ interface Site {
   technologySpend: string;
 }
 
-const typedSites: Site = sites as Site;
+// const typedSites: Site = sites as Site;
 const typedApps: Site = apps as unknown as Site;
 const typedLandingPages: Site = landingPages as Site;
 
