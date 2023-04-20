@@ -1,13 +1,16 @@
 import { Pie } from "@ant-design/plots";
-import sites from "../../data/sites.json";
+import sites from "../../data/sites.js";
 import { useEffect, useState } from "react";
 
-export const getCleanedData = (targetColumn, setData) => {
+export const getCleanedData = (targetColumn, setData, dataSource) => {
   const targetServiceCount = {};
-  sites.forEach((obj) => {
+  console.log({ dataSource });
+  dataSource?.forEach((obj) => {
+    console.log({ obj });
     let columnPresent = false;
     obj.technologies?.forEach((tech) => {
       if (tech.categories.some((cat) => cat.slug === targetColumn)) {
+        console.log("hi");
         const targetColumnName = tech.name;
         targetServiceCount[targetColumnName] =
           (targetServiceCount[targetColumnName] || 0) + 1;
@@ -32,11 +35,11 @@ export const getCleanedData = (targetColumn, setData) => {
   setData(targetServiceData);
 };
 
-const CDNPie = () => {
+const CDNPie = ({ dataSource }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    getCleanedData("cdn", setData);
-  }, []);
+    getCleanedData("cdn", setData, dataSource);
+  }, [dataSource]);
 
   const cdnConfig = {
     appendPadding: 10,
@@ -48,7 +51,6 @@ const CDNPie = () => {
       type: "inner",
       offset: "-30%",
       content: ({ percent }) => {
-        console.log(percent * 100);
         if (percent * 100 >= 5) {
           return `${(percent * 100).toFixed(0)}%`;
         }

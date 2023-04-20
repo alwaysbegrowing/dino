@@ -18,7 +18,6 @@ const SsgPie = () => {
       type: "inner",
       offset: "-30%",
       content: ({ percent }) => {
-        console.log(percent * 100);
         if (percent * 100 >= 5) {
           return `${(percent * 100).toFixed(0)}%`;
         }

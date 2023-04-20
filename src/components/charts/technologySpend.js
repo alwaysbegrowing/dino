@@ -1,5 +1,5 @@
 import { Pie } from "@ant-design/plots";
-import sites from "../../data/sites.json";
+import sites from "../../data/sites.js";
 import { useEffect, useState } from "react";
 
 const getCleanedTechnologySpendData = (setData) => {
@@ -33,7 +33,6 @@ const TechnologySpendPie = () => {
       type: "inner",
       offset: "-30%",
       content: ({ percent }) => {
-        console.log(percent * 100);
         if (percent * 100 >= 1) {
           return `${(percent * 100).toFixed(0)}%`;
         }

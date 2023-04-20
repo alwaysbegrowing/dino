@@ -18,6 +18,11 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/hello.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/api/cleanFiles.js"
+  ],
   "exclude": ["node_modules"]
 }
