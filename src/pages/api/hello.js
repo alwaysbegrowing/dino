@@ -107,65 +107,62 @@ export default async function getSubdomains(req, res) {
 
 //Iterate over the subdomains and push only the subdomains beginning with "app" to the appSubdomains array
 
-// const appSubdomains = [];
+const appSubdomains = [];
 
-// export function getAppsFromSubdomainsList() {
-//   subdomains?.forEach((domain) => {
-//     domain.forEach((singleDomain) => {
-//       const subdomainsList = singleDomain.subdomains;
-//       for (const key in subdomainsList) {
-//         if (subdomainsList.hasOwnProperty(key)) {
-//           if (key.startsWith("app")) {
-//             const subdomain = key;
-//             appSubdomains.push(subdomain);
-//           }
-//         }
-//       }
-//     });
-//   });
-// }
+export function getAppsFromSubdomainsList() {
+  subdomains?.forEach((domain) => {
+    domain.forEach((singleDomain) => {
+      const subdomainsList = singleDomain.subdomains;
+      for (const key in subdomainsList) {
+        if (subdomainsList.hasOwnProperty(key)) {
+          if (key.startsWith("app")) {
+            const subdomain = key;
+            appSubdomains.push(subdomain);
+          }
+        }
+      }
+    });
+  });
+}
 
-// getAppsFromSubdomainsList();
+getAppsFromSubdomainsList();
 
 //Add the subdomains with app to a json file so we can request the site info for each domain
 //TO DO: Make all of the push to separate json files a single function and add logic to check and make sure no duplicates are being added
 
-// function pushAppSubdomainDataToFile() {
-//   //Read the existing data from the file
-//   fs.readFile("src/data/appSubdomainList.json", (err, data) => {
-//     if (err) {
-//       console.error(err);
-//       return;
-//     }
+function pushAppSubdomainDataToFile() {
+  //Read the existing data from the file
+  fs.readFile("src/data/appSubdomainList.json", (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
 
-//     // Parse the existing data from JSON
-//     const existingData = () => {
-//       if (data) {
-//         JSON.parse(data);
-//       }
-//     };
+    // Parse the existing data from JSON
+    const existingData = JSON.parse(data);
 
-//     // Add the new data to the existing data
-//     const updatedData = { ...existingData, ...appSubdomains };
+    // Add the new data to the existing data
+    const updatedData = [...existingData, ...appSubdomains];
+    const uniqueDataArray = [...new Set(updatedData)];
 
-//     console.log({ updatedData });
+    console.log({ uniqueDataArray });
 
-//     // Write the updated data back to the file
-//     fs.writeFile(
-//       "src/data/appSubdomainList.json",
-//       JSON.stringify(updatedData),
-//       (err) => {
-//         if (err) {
-//           console.error(err);
-//           return;
-//         }
-//         console.log("New data added to src/data/appSubdomainList.json");
-//       }
-//     );
-//   });
-// }
+    // Write the updated data back to the file
+    fs.writeFile(
+      "src/data/appSubdomainList.json",
+      JSON.stringify(uniqueDataArray),
+      (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log("New data added to src/data/appSubdomainList.json");
+      }
+    );
+  });
+}
 
-// pushAppSubdomainDataToFile();
+pushAppSubdomainDataToFile();
 
 //1. IF site.status === "success" : Create function to loop through URLs and clean them (remove http, https, www, etc.)
 //2. Create function to fetch app.DOMAIN
