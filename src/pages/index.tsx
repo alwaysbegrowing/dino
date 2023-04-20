@@ -44,7 +44,7 @@ interface Site {
 
 // const typedSites: Site = sites as Site;
 const typedApps: Site = apps as unknown as Site;
-const typedLandingPages: Site = landingPages as Site;
+const typedLandingPages: Site = landingPages as unknown as Site;
 
 import { Typography } from "antd";
 import { useState } from "react";
