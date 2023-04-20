@@ -1,4 +1,4 @@
-import { Row, Col, Card, Space } from "antd";
+import { Row, Col, Card, Space, Button } from "antd";
 import Layout from "../components/format/layout";
 import CDNPie from "../components/charts/cdnPie";
 import PaasPie from "../components/charts/paasPie";
@@ -80,78 +80,93 @@ const GraphsPage = () => {
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="CDNs">
-              <CDNPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card title="CDNs" bodyStyle={{ padding: 24, width: 425 }}>
+              <CDNPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="PAAS">
-              <PaasPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card title="PAAS" bodyStyle={{ padding: 24, width: 425 }}>
+              <PaasPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Static Site Generator">
-              <SsgPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card
+              title="Static Site Generator"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
+              <SsgPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Page Builders">
-              <PageBuildersPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card title="Page Builders" bodyStyle={{ padding: 24, width: 425 }}>
+              <PageBuildersPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="UI Frameworks">
-              <UIFrameworksPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card title="UI Frameworks" bodyStyle={{ padding: 24, width: 425 }}>
+              <UIFrameworksPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Web Frameworks">
-              <WebFrameworksPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }} />
+            <Card
+              title="Web Frameworks"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
+              <WebFrameworksPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Web Servers">
-              <WebServersPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card title="Web Servers" bodyStyle={{ padding: 24, width: 425 }}>
+              <WebServersPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Javascript Frameworks">
-              <JSFrameworksPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card
+              title="Javascript Frameworks"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
+              <JSFrameworksPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Country">
-              <CountryPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card title="Country" bodyStyle={{ padding: 24, width: 425 }}>
+              <CountryPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Mobile Responsiveness">
-              <ResponsivePie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card
+              title="Mobile Responsiveness"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
+              <ResponsivePie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
-            <Card title="Technology Spend">
-              <TechnologySpendPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
+            <Card
+              title="Technology Spend"
+              bodyStyle={{ padding: 24, width: 425 }}
+            >
+              <TechnologySpendPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
