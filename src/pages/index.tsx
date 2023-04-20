@@ -61,10 +61,17 @@ const GraphsPage = () => {
             <Title style={{ textAlign: "center" }}>
               {dataSource === typedApps ? "App Charts" : "Landing Page Charts"}
             </Title>
-            <Button onClick={() => setDataSource(typedApps)}>App Data</Button>
-            <Button onClick={() => setDataSource(typedLandingPages)}>
-              Landing Page Data
-            </Button>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Button
+                onClick={() => setDataSource(typedApps)}
+                style={{ marginRight: "16px" }}
+              >
+                App Data
+              </Button>
+              <Button onClick={() => setDataSource(typedLandingPages)}>
+                Landing Page Data
+              </Button>
+            </div>
           </Col>
         </Row>
         <Row justify="center">
