@@ -4,13 +4,10 @@ import { useEffect, useState } from "react";
 
 export const getCleanedData = (targetColumn, dataSource) => {
   const targetServiceCount = {};
-  console.log({ dataSource });
   dataSource?.forEach((obj) => {
-    console.log({ obj });
     let columnPresent = false;
     obj.technologies?.forEach((tech) => {
       if (tech.categories.some((cat) => cat.slug === targetColumn)) {
-        console.log("hi");
         const targetColumnName = tech.name;
         targetServiceCount[targetColumnName] =
           (targetServiceCount[targetColumnName] || 0) + 1;

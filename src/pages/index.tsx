@@ -12,6 +12,8 @@ import ResponsivePie from "../components/charts/responsive";
 import TechnologySpendPie from "../components/charts/technologySpend";
 import JSFrameworksPie from "../components/charts/javascriptFrameworks";
 import sites from "../data/sites.json";
+import apps from "../data/appsOnly.json";
+import landingPages from "../data/landingPages.json";
 
 interface Site {
   URL: string;
@@ -41,6 +43,8 @@ interface Site {
 }
 
 const typedSites: Site = sites as Site;
+const typedApps: Site = apps as any;
+const typedLandingPages: Site = landingPages as Site;
 
 import { Typography } from "antd";
 import { useState } from "react";
@@ -48,15 +52,17 @@ import { useState } from "react";
 const { Title } = Typography;
 
 const GraphsPage = () => {
-  const [showAppData, setShowAppData] = useState(true);
+  const [dataSource, setDataSource] = useState<any>(typedApps);
   return (
     <Layout>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
         <Row justify="center">
           <Col span={24}>
-            <Title style={{ textAlign: "center" }}>Charts</Title>
-            <Button onClick={() => setShowAppData(true)}>App Data</Button>
-            <Button onClick={() => setShowAppData(false)}>
+            <Title style={{ textAlign: "center" }}>
+              {dataSource === typedApps ? "App Charts" : "Landing Page Charts"}
+            </Title>
+            <Button onClick={() => setDataSource(typedApps)}>App Data</Button>
+            <Button onClick={() => setDataSource(typedLandingPages)}>
               Landing Page Data
             </Button>
           </Col>
@@ -64,77 +70,77 @@ const GraphsPage = () => {
         <Row justify="center">
           <Col span={24}>
             <Card title="CDNs">
-              <CDNPie dataSource={typedSites} />
+              <CDNPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="PAAS">
-              <PaasPie />
+              <PaasPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Static Site Generator">
-              <SsgPie />
+              <SsgPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Page Builders">
-              <PageBuildersPie />
+              <PageBuildersPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="UI Frameworks">
-              <UIFrameworksPie />
+              <UIFrameworksPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Web Frameworks">
-              <WebFrameworksPie />
+              <WebFrameworksPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Web Servers">
-              <WebServersPie />
+              <WebServersPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Javascript Frameworks">
-              <JSFrameworksPie />
+              <JSFrameworksPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Country">
-              <CountryPie />
+              <CountryPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Mobile Responsiveness">
-              <ResponsivePie />
+              <ResponsivePie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Technology Spend">
-              <TechnologySpendPie />
+              <TechnologySpendPie dataSource={dataSource} />
             </Card>
           </Col>
         </Row>

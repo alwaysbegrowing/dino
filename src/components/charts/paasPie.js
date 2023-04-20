@@ -1,12 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const PaasPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedData("paas", setData);
-  }, []);
+const PaasPie = ({ dataSource }) => {
+  const data = getCleanedData("paas", dataSource);
 
   const paasConfig = {
     appendPadding: 10,

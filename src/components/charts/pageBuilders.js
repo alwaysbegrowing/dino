@@ -1,12 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const PageBuildersPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedData("page-builders", setData);
-  }, []);
+const PageBuildersPie = ({ dataSource }) => {
+  const data = getCleanedData("page-builders", dataSource);
 
   const pageBuildersConfig = {
     appendPadding: 10,

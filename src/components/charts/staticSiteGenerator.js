@@ -2,11 +2,8 @@ import { Pie } from "@ant-design/plots";
 import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const SsgPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedData("static-site-generator", setData);
-  }, []);
+const SsgPie = ({ dataSource }) => {
+  const data = getCleanedData("static-site-generator", dataSource);
 
   const ssgConfig = {
     appendPadding: 10,

@@ -1,12 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const UIFrameworksPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedData("ui-frameworks", setData);
-  }, []);
+const UIFrameworksPie = ({ dataSource }) => {
+  const data = getCleanedData("ui-frameworks", dataSource);
 
   const uiFrameworksConfig = {
     appendPadding: 10,

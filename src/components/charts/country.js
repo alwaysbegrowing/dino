@@ -1,10 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import sites from "../../data/sites.json";
-import { useEffect, useState } from "react";
 
-const getCleanedCountryData = (setData) => {
+const getCleanedCountryData = (dataSource) => {
   const countryCount = {};
-  sites.forEach((site) => {
+  dataSource.forEach((site) => {
     const country = site.ipCountry;
     countryCount[country] = (countryCount[country] || 0) + 1;
   });
@@ -14,14 +12,11 @@ const getCleanedCountryData = (setData) => {
       value: countryCount[country],
     };
   });
-  setData(countryData);
+  return countryData;
 };
 
-const CountryPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedCountryData(setData);
-  }, []);
+const CountryPie = ({ dataSource }) => {
+  const data = getCleanedCountryData(dataSource);
 
   const countryConfig = {
     appendPadding: 10,
