@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import sites from "../../data/sites.js";
-import subdomains from "../../data/subdomains.json";
-import appsOnly from "../../data/appsOnly.json";
+// import sites from "../../data/sites.js";
+// import subdomains from "../../data/subdomains.json";
+// import appsOnly from "../../data/appsOnly.json";
 
 const fs = require("fs");
 
