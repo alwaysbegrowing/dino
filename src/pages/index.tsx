@@ -1,4 +1,4 @@
-import { Row, Col, Button, Card, Space } from "antd";
+import { Row, Col, Card, Space } from "antd";
 import Layout from "../components/format/layout";
 import CDNPie from "../components/charts/cdnPie";
 import PaasPie from "../components/charts/paasPie";
@@ -55,7 +55,11 @@ const GraphsPage = () => {
   const [dataSource, setDataSource] = useState<Site>(typedApps);
   return (
     <Layout>
-      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
+      <Space
+        direction="vertical"
+        size="middle"
+        style={{ display: "flex", width: "100%" }}
+      >
         <Row justify="center">
           <Col span={24}>
             <Title style={{ textAlign: "center" }}>
@@ -77,77 +81,77 @@ const GraphsPage = () => {
         <Row justify="center">
           <Col span={24}>
             <Card title="CDNs">
-              <CDNPie dataSource={dataSource} />
+              <CDNPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="PAAS">
-              <PaasPie dataSource={dataSource} />
+              <PaasPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Static Site Generator">
-              <SsgPie dataSource={dataSource} />
+              <SsgPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Page Builders">
-              <PageBuildersPie dataSource={dataSource} />
+              <PageBuildersPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="UI Frameworks">
-              <UIFrameworksPie dataSource={dataSource} />
+              <UIFrameworksPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Web Frameworks">
-              <WebFrameworksPie dataSource={dataSource} />
+              <WebFrameworksPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }} />
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Web Servers">
-              <WebServersPie dataSource={dataSource} />
+              <WebServersPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Javascript Frameworks">
-              <JSFrameworksPie dataSource={dataSource} />
+              <JSFrameworksPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Country">
-              <CountryPie dataSource={dataSource} />
+              <CountryPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Mobile Responsiveness">
-              <ResponsivePie dataSource={dataSource} />
+              <ResponsivePie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
         <Row justify="center">
           <Col span={24}>
             <Card title="Technology Spend">
-              <TechnologySpendPie dataSource={dataSource} />
+              <TechnologySpendPie dataSource={dataSource} bodyStyle={{ padding: 24, width: 425 }}/>
             </Card>
           </Col>
         </Row>
