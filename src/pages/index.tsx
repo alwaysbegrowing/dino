@@ -43,7 +43,7 @@ interface Site {
 }
 
 const typedSites: Site = sites as Site;
-const typedApps: Site = apps as any;
+const typedApps: Site = apps as unknown as Site;
 const typedLandingPages: Site = landingPages as Site;
 
 import { Typography } from "antd";
@@ -59,7 +59,7 @@ const GraphsPage = () => {
         <Row justify="center">
           <Col span={24}>
             <Title style={{ textAlign: "center" }}>
-              {dataSource === typedApps ? "App Charts" : "Landing Page Charts"}
+              {dataSource === typedApps ? "App Charts" : "Other Page Charts"}
             </Title>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Button
@@ -69,7 +69,7 @@ const GraphsPage = () => {
                 App Data
               </Button>
               <Button onClick={() => setDataSource(typedLandingPages)}>
-                Landing Page Data
+                Other Page Data
               </Button>
             </div>
           </Col>
