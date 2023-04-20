@@ -52,7 +52,7 @@ import { useState } from "react";
 const { Title } = Typography;
 
 const GraphsPage = () => {
-  const [dataSource, setDataSource] = useState<any>(typedApps);
+  const [dataSource, setDataSource] = useState<Site>(typedApps);
   return (
     <Layout>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
