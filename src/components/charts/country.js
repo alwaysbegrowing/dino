@@ -1,5 +1,5 @@
 import { Pie } from "@ant-design/plots";
-import sites from "../../data/sites.js";
+import sites from "../../data/sites.json";
 import { useEffect, useState } from "react";
 
 const getCleanedCountryData = (setData) => {

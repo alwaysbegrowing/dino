@@ -1,8 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import sites from "../../data/sites.js";
+
 import { useEffect, useState } from "react";
 
-export const getCleanedData = (targetColumn, setData, dataSource) => {
+export const getCleanedData = (targetColumn, dataSource) => {
   const targetServiceCount = {};
   console.log({ dataSource });
   dataSource?.forEach((obj) => {
@@ -32,14 +32,12 @@ export const getCleanedData = (targetColumn, setData, dataSource) => {
       };
     }
   );
-  setData(targetServiceData);
+  return targetServiceData;
 };
 
 const CDNPie = ({ dataSource }) => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedData("cdn", setData, dataSource);
-  }, [dataSource]);
+  console.log("russell", { dataSource });
+  const data = getCleanedData("cdn", dataSource);
 
   const cdnConfig = {
     appendPadding: 10,
