@@ -1,10 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import sites from "../../data/sites.json";
-import { useEffect, useState } from "react";
 
-const getCleanedResponsiveData = (setData) => {
+const getCleanedResponsiveData = (dataSource) => {
   const columnCount = {};
-  sites.forEach((site) => {
+  dataSource?.forEach((site) => {
     const targetColumn = site.responsive;
     columnCount[targetColumn] = (columnCount[targetColumn] || 0) + 1;
   });
@@ -15,14 +13,11 @@ const getCleanedResponsiveData = (setData) => {
       value: columnCount[targetColumn],
     };
   });
-  setData(responsiveData);
+  return responsiveData;
 };
 
-const ResponsivePie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedResponsiveData(setData);
-  }, []);
+const ResponsivePie = ({ dataSource }) => {
+  const data = getCleanedResponsiveData(dataSource);
 
   const responsiveConfig = {
     appendPadding: 10,

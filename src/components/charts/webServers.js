@@ -2,11 +2,8 @@ import { Pie } from "@ant-design/plots";
 import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const WebServersPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedData("web-servers", setData);
-  }, []);
+const WebServersPie = ({ dataSource }) => {
+  const data = getCleanedData("web-servers", dataSource);
 
   const webServersConfig = {
     appendPadding: 10,
@@ -18,7 +15,6 @@ const WebServersPie = () => {
       type: "inner",
       offset: "-30%",
       content: ({ percent }) => {
-        console.log(percent * 100);
         if (percent * 100 >= 5) {
           return `${(percent * 100).toFixed(0)}%`;
         }

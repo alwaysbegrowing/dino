@@ -1,12 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import { useEffect, useState } from "react";
 import { getCleanedData } from "./cdnPie";
 
-const JSFrameworksPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedData("javascript-frameworks", setData);
-  }, []);
+const JSFrameworksPie = ({ dataSource }) => {
+  const data = getCleanedData("javascript-frameworks", dataSource);
 
   const jsFrameworksConfig = {
     appendPadding: 10,
@@ -18,7 +14,6 @@ const JSFrameworksPie = () => {
       type: "inner",
       offset: "-30%",
       content: ({ percent }) => {
-        console.log(percent * 100);
         if (percent * 100 >= 5) {
           return `${(percent * 100).toFixed(0)}%`;
         }

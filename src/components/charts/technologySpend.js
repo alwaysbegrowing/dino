@@ -1,10 +1,8 @@
 import { Pie } from "@ant-design/plots";
-import sites from "../../data/sites.json";
-import { useEffect, useState } from "react";
 
-const getCleanedTechnologySpendData = (setData) => {
+const getCleanedTechnologySpendData = (dataSource) => {
   const technologySpendCount = {};
-  sites.forEach((site) => {
+  dataSource?.forEach((site) => {
     const column = site.technologySpend;
     technologySpendCount[column] = (technologySpendCount[column] || 0) + 1;
   });
@@ -14,14 +12,11 @@ const getCleanedTechnologySpendData = (setData) => {
       value: technologySpendCount[spend],
     };
   });
-  setData(technologySpendData);
+  return technologySpendData;
 };
 
-const TechnologySpendPie = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getCleanedTechnologySpendData(setData);
-  }, []);
+const TechnologySpendPie = ({ dataSource }) => {
+  const data = getCleanedTechnologySpendData(dataSource);
 
   const technologySpendConfig = {
     appendPadding: 10,
@@ -33,7 +28,6 @@ const TechnologySpendPie = () => {
       type: "inner",
       offset: "-30%",
       content: ({ percent }) => {
-        console.log(percent * 100);
         if (percent * 100 >= 1) {
           return `${(percent * 100).toFixed(0)}%`;
         }
